@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analysis Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="result-container">
+        <h2>Analysis Result</h2>
+        <div class="result-text">
+            <h3>Review:</h3>
+            <p>{{ review }}</p>
+            <h3>Sentiment:</h3>
+            <p>{{ sentiment }}</p>
+        </div>
+        <div class="sentiment-media">
+            {% if "Positive" in sentiment %}
+                <iframe src="https://giphy.com/embed/3tyP6q5PyRCOcYHk74" title="Positive sentiment GIF" width="480" height="480" class="giphy-embed" allowFullScreen></iframe>
+            {% elif "Negative" in sentiment %}
+                <iframe src="https://giphy.com/embed/RQvRADtPVFn7Y9mFQs" title="Negative sentiment GIF" width="480" height="480" class="giphy-embed" allowFullScreen></iframe>
+            {% elif "Neutral" in sentiment %}
+                <iframe src="https://giphy.com/embed/7RKuyUSWRTbE2H6zG3" title="Neutral sentiment GIF" width="323" height="480" class="giphy-embed" allowFullScreen></iframe>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
+
+

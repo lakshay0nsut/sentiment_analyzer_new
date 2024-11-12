@@ -1,0 +1,22 @@
+<!-- This is the main page of the web app, where the user can enter a review and submit it to the server for analysis-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analyser</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Sentiment Analyzer</h1>
+        <form action="/analyze" method="post">
+            <label for="review">Enter your text here:</label>
+            <textarea id="review" name="review" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
